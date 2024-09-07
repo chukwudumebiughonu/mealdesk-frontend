@@ -75,7 +75,7 @@ MealDesk is a comprehensive food ordering and restaurant management Software as 
    * Mobile-friendly interface using TailwindCSS
 
 ## Backend API Structure
-
+[View backend](https://github.com/chukwudumebiughonu/mealdesk-backend)
 1. User Routes (`/api/my/user`):
    * GET: Fetch current user details
    * POST: Create new user
