@@ -38,7 +38,7 @@ MealDesk is a comprehensive food ordering and restaurant management Software as 
 
 ## Detailed Feature Breakdown
 <p align="center">
-  <img src="mealdeskarchitecture.png" alt="MealDesk Logo" width="200"/>
+  <img src="/public/mealdeskarchitecture.png" alt="MealDesk Logo" width="200"/>
 </p>
 
 1. Authentication:
