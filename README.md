@@ -4,7 +4,7 @@
 
 MealDesk is a comprehensive food ordering and restaurant management Software as a Service (SaaS) platform built with React for the frontend and Express.js for the backend. It empowers users to order food from various restaurants, while allowing restaurant owners to manage their menus, track orders, and handle deliveries.
 
-👉 [Live Demo](#) [<!-- Add your live demo link here -->
+👉 [Live Demo] [<!-- Add your live demo link here -->
 ](https://mealdesk-frontend.onrender.com/)
 ## Key Features:
 
