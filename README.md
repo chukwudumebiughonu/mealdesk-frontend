@@ -1,50 +1,131 @@
-# React + TypeScript + Vite
+# MealDesk: Advanced Food Ordering and Restaurant Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
+MealDesk is a comprehensive food ordering and restaurant management Software as a Service (SaaS) platform built with React for the frontend and Express.js for the backend. It empowers users to order food from various restaurants, while allowing restaurant owners to manage their menus, track orders, and handle deliveries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [Live Demo](#) <!-- Add your live demo link here -->
 
-## Expanding the ESLint configuration
+## Key Features:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* **Secure Authentication**: Robust authentication system using Auth0 for both customers and restaurant owners.
+* **Restaurant Management**: Restaurant owners can create and manage their restaurant profiles, menus, and orders.
+* **User Profiles**: Customers can create and manage their profiles, including delivery addresses.
+* **Restaurant Search**: Users can search for restaurants based on location, cuisine, and other filters.
+* **Menu Browsing**: Detailed menu viewing for each restaurant with item descriptions and prices.
+* **Order Placement**: Seamless order placement process with cart management.
+* **Payment Integration**: Secure payment processing using Stripe.
+* **Order Tracking**: Real-time order status updates for both customers and restaurant owners.
+* **Responsive Design**: Consistent user experience across desktop, tablet, and mobile platforms.
 
-- Configure the top-level `parserOptions` property like this:
+## Tools and Technology
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Frontend:
+* **React**
+* **TypeScript**
+* **React Query**
+* **React Hook Form**
+* **Zod**
+* **TailwindCSS**
+* **Shadcn/ui**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Backend:
+* **Express.js**
+* **MongoDB**
+* **Mongoose**
+* **Auth0**
+* **Stripe**
+* **Cloudinary**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Detailed Feature Breakdown
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Authentication:
+   * Auth0 integration for secure user authentication
+   * JWT token-based authorization
+   * User role management (customer, restaurant owner)
+
+2. User Management:
+   * User profile creation and editing
+   * Address management for delivery
+
+3. Restaurant Management:
+   * Restaurant profile creation and editing
+   * Menu management (add, edit, remove items)
+   * Order management and status updates
+
+4. Restaurant Search and Browsing:
+   * Search functionality with filters (cuisine, location)
+   * Detailed restaurant view with menu items
+
+5. Order Process:
+   * Shopping cart functionality
+   * Checkout process with address selection
+   * Stripe integration for payment processing
+
+6. Order Tracking:
+   * Real-time order status updates
+   * Order history for customers and restaurants
+
+7. Image Upload:
+   * Cloudinary integration for restaurant and menu item images
+
+8. Responsive Design:
+   * Mobile-friendly interface using TailwindCSS
+
+## Backend API Structure
+
+1. User Routes (`/api/my/user`):
+   * GET: Fetch current user details
+   * POST: Create new user
+   * PUT: Update user details
+
+2. Restaurant Routes (`/api/my/restaurant`):
+   * GET: Fetch restaurant details
+   * POST: Create new restaurant
+   * PUT: Update restaurant details
+   * GET `/order`: Fetch restaurant orders
+   * PATCH `/order/:orderId/status`: Update order status
+
+3. Public Restaurant Routes (`/api/restaurant`):
+   * GET `/:restaurantId`: Fetch specific restaurant details
+   * GET `/search/:city`: Search restaurants in a city
+
+4. Order Routes (`/api/order`):
+   * GET: Fetch user's orders
+   * POST `/checkout/create-checkout-session`: Create Stripe checkout session
+   * POST `/checkout/webhook`: Handle Stripe webhook events
+
+## Frontend Component Structure
+
+1. Layout Components:
+   * Header
+   * Footer
+   * MainNav
+   * MobileNav
+
+2. Page Components:
+   * HomePage
+   * SearchPage
+   * DetailPage (Restaurant Details)
+   * OrderStatusPage
+   * UserProfilePage
+   * ManageRestaurantPage
+
+3. Form Components:
+   * UserProfileForm
+   * ManageRestaurantForm
+
+4. Utility Components:
+   * SearchBar
+   * PaginationSelector
+   * LoadingButton
+
+## Data Flow
+
+1. User actions in the frontend components trigger API calls using custom hooks (e.g., `useCreateMyRestaurant`, `useGetMyUser`).
+2. These hooks use React Query for data fetching and caching.
+3. API requests are sent to the backend Express.js server.
+4. The backend processes requests, interacts with the MongoDB database using Mongoose models, and returns responses.
+5. The frontend updates its state based on the responses, providing real-time updates to the user interface.
+
+This architecture allows for a scalable, maintainable, and user-friendly food ordering and restaurant management platform.
